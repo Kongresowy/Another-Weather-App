@@ -67,7 +67,7 @@ class App extends React.Component {
         const API_KEY = "ccfe788d74e091c463fa98b02243bc94";
         const city = e.target.elements.city.value;
         const country = e.target.elements.country.value;
-        const URL = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`;
+        const URL = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`;
         fetch(URL).then(r => {
             return r.json()
         }).then(data => {
