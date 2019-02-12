@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom';
 
 class Weather extends React.Component {
     render() {
+        const arrowDir = {
+            transform: `rotate(${-90 + this.props.wind_dir}deg)`
+        };
         return (
-            <div>
-                {this.props.city && this.props.country && <p>Location: {this.props.city}, {this.props.country}</p>}
-                {this.props.temperature && <p>Temperature: {this.props.temperature} °C</p>}
-                {this.props.wind_speed && this.props.wind_dir && <p>Wind: {this.props.wind_dir} {this.props.wind_speed} km/h</p>}
-                {this.props.pressure && <p>Pressure: {this.props.pressure} hPa</p>}
-                {this.props.humidity && <p>Humidity: {this.props.humidity} %</p>}
-                {this.props.description && <p>Description: {this.props.description}</p>}
-                {this.props.error && <p>{this.props.error}</p>}
+            <div className="data-wrapper">
+                {this.props.city && this.props.country && <div>Location: {this.props.city}, {this.props.country}</div>}
+                {this.props.temperature && <div>Temperature: {this.props.temperature} °C</div>}
+                {this.props.wind_speed && this.props.wind_dir && <div>Wind: <div id="arrow" style={arrowDir}>&#10168;</div> {this.props.wind_speed} km/h</div>}
+                {this.props.pressure && <div>Pressure: {this.props.pressure} hPa</div>}
+                {this.props.humidity && <div>Humidity: {this.props.humidity} %</div>}
+                {this.props.description && <div>Description: {this.props.description}</div>}
+                {this.props.error && <div>{this.props.error}</div>}
             </div>
         );
     }
@@ -35,9 +38,9 @@ class Inputs extends React.Component {
 class Title extends React.Component {
     render() {
         return (
-            <div>
-                <h1>Weather App Title</h1>
-                <p>Paragraph near title for all awesomeness</p>
+            <div className="title-wrapper">
+                <h1>Another Weather App</h1>
+                <p>Check Your Local Weather Conditions And Enjoy !</p>
             </div>
         );
     }
@@ -68,8 +71,8 @@ class App extends React.Component {
         fetch(URL).then(r => {
             return r.json()
         }).then(data => {
-            console.log(data.cod);
-            if (city && country) {
+            console.log(data);
+            if (city && country && data.cod == 200) {
                 this.setState({
                     temperature: data.main.temp,
                     city: data.name,
@@ -91,7 +94,7 @@ class App extends React.Component {
                     pressure: undefined,
                     humidity: undefined,
                     description: undefined,
-                    error: "Please enter a city and country symbol (for ex. UK)."
+                    error: "Please enter a city and country (for ex. UK)."
                 });
             }
         }).catch(err => {
@@ -101,7 +104,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="main-wrapper">
                 <Title></Title>
                 <Inputs getWeather={this.getWeather}></Inputs>
                 <Weather temperature={this.state.temperature} city={this.state.city} country={this.state.country} wind_speed={this.state.wind_speed} wind_dir={this.state.wind_dir} pressure={this.state.pressure} humidity={this.state.humidity} description={this.state.description} error={this.state.error}></Weather>

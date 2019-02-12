@@ -1,0 +1,199 @@
+@font-face {
+  font-family: 'lobsterregular';
+  src: url("../fonts/lobster-regular-webfont.woff2") format("woff2"), url("../fonts/lobster-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futurabook';
+  src: url("../fonts/futura_book_font-webfont.woff2") format("woff2"), url("../fonts/futura_book_font-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/theme.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #181818;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3vh 3vw 3vh 3vw;
+  font-family: 'futurabook', sans-serif;
+  font-weight: 700;
+}
+
+.main-wrapper {
+  width: 50vw;
+  height: 60vh;
+  min-width: 300px;
+  min-height: 550px;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2vh 2vw 2vh 2vw;
+  border-radius: 5px;
+}
+
+.title-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.title-wrapper h1 {
+  font-family: 'lobsterregular', sans-serif;
+  font-size: 50px;
+}
+
+.title-wrapper p {
+  font-size: 18px;
+  padding: 10px 0px 10px 0px;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form input {
+  font-family: 'futurabook', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  width: 100%;
+  margin-bottom: 1vh;
+  border: none;
+  border-bottom: 2px solid #181818;
+  border-radius: 3px;
+  font-size: 16px;
+  background-color: transparent;
+  padding: 12px 0 12px 20px;
+  -webkit-transition: width 0.7s ease-in-out;
+  transition: width 0.7s ease-in-out;
+}
+
+form input::-webkit-input-placeholder {
+  font-family: 'futurabook', sans-serif;
+  letter-spacing: 1px;
+  color: #4d4d4d;
+  font-weight: 700;
+}
+
+form input:-ms-input-placeholder {
+  font-family: 'futurabook', sans-serif;
+  letter-spacing: 1px;
+  color: #4d4d4d;
+  font-weight: 700;
+}
+
+form input::-ms-input-placeholder {
+  font-family: 'futurabook', sans-serif;
+  letter-spacing: 1px;
+  color: #4d4d4d;
+  font-weight: 700;
+}
+
+form input::placeholder {
+  font-family: 'futurabook', sans-serif;
+  letter-spacing: 1px;
+  color: #4d4d4d;
+  font-weight: 700;
+}
+
+form input[type=text]:focus {
+  width: 95%;
+  border-bottom: 2px solid black;
+}
+
+form button {
+  font-family: 'futurabook', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  background-color: whitesmoke;
+  width: 100%;
+  padding: 12px 0px 12px 0px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.data-wrapper {
+  height: 53%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.data-wrapper div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 22px;
+  text-align: center;
+}
+
+.data-wrapper div #arrow {
+  color: black;
+  padding: 0px 10px 0px 10px;
+}
+
+@media (max-width: 930px) {
+  .data-wrapper {
+    height: 41%;
+  }
+  .data-wrapper div {
+    font-size: 15px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
