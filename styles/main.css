@@ -196,4 +196,36 @@ form button {
     font-size: 15px;
   }
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 830px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .main-wrapper {
+    min-width: 550px;
+    min-height: 300px;
+  }
+  form input {
+    margin-bottom: 2px;
+    font-size: 15px;
+    padding: 2px 0 2px 15px;
+  }
+  form button {
+    font-size: 15px;
+    padding: 2px 0px 2px 0px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 350px) {
+  .title-wrapper h1 {
+    font-size: 30px;
+  }
+  .title-wrapper p {
+    font-size: 15px;
+  }
+  form input {
+    padding: 5px 0 5px 15px;
+  }
+  form button {
+    padding: 5px 0px 5px 0px;
+  }
+}
 /*# sourceMappingURL=main.css.map */

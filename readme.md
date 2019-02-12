@@ -5,4 +5,4 @@ Fully responsive, simple web application for searching and checking weather cond
 
 Enjoy!
 
-https://kongresowy.github.io/Weather-App/
+https://kongresowy.github.io/Another-Weather-App/
